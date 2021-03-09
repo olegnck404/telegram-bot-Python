@@ -25,23 +25,13 @@ def welcome(message):
 	bot.send_message(message.chat.id, "Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>.".format(message.from_user, bot.get_me()),
 		parse_mode='html', reply_markup=markup)
 
-@bot.message_handler(content_types=['text'])#oos
+@bot.message_handler(content_types=['text'])
 def lalala(message):
 	if message.chat.type == 'private':
-		if message.text == 'OxygenOS':
-			bot.send_message(message.chat.id,'  https://t.me/WhyredOOSG/284436 Актуальная версия ',)
+		if message.text == 'dev':
+			bot.send_message(message.chat.id,'  @oleqwg ',)
 		elif message.text == 'Прошивки':
-			bot.send_message(message.chat.id,'  https://t.me/RedmiNote5_By_XTB/382176 '  )
-			#miroom
-		elif message.text == 'MiRoom':
-
-			markup = types.InlineKeyboardMarkup(row_width=2)
-			item1 = types.InlineKeyboardButton("Стабильная", callback_data='stab')
-			item2 = types.InlineKeyboardButton("Еженедельная", callback_data='beta')
-
-			markup.add(item1, item2)
-
-			bot.send_message(message.chat.id, 'Какую Вам?', reply_markup=markup)
+			bot.send_message(message.chat.id,'  https://t.me/RedmiNote5_By_XTB/887739 '  )
 			#instructions
 		elif message.text == 'Инструкции':
 
@@ -49,6 +39,7 @@ def lalala(message):
 			item1 = types.InlineKeyboardButton("Остаточное изображение", callback_data='screenburn')
 			item2 = types.InlineKeyboardButton("Фикс лаунчера MiUi", callback_data='fml')
 			item3 = types.InlineKeyboardButton("ViperFX", callback_data='vfx')
+			
 			
 			markup.add(item1, item2, item3)
 
@@ -74,7 +65,8 @@ def lalala(message):
 			markup = types.InlineKeyboardMarkup(row_width=2)
 			item1 = types.InlineKeyboardButton("Whyred Cloud", callback_data='whyc')
 			item2 = types.InlineKeyboardButton("Whyred Updates", callback_data='wucc')
-			markup.add(item1, item2)
+			item3 = types.InlineKeyboardButton("Модули Magisk", callback_data='MM')
+			markup.add(item1, item2, item3)
 
 			bot.send_message(message.chat.id, 'Выбирай', reply_markup=markup)
 			#Ytube
@@ -109,8 +101,6 @@ def callback_inline(call):
 		if call.message:
 			if call.data == 'stab':
 				bot.send_message(call.message.chat.id, 'https://downloads.sourceforge.net/project/miroom/stable/V11.0/RedmiNote5_MIUI_V11.0.2.0.PEICNXM_MiRoom_9.0.zip?r=https%3A%2F%2Fportal.mi-room.ru%2Froms%2F&ts=1580589124&use_mirror=netix')
-			elif call.data == 'beta':
-				bot.send_message(call.message.chat.id, 'https://downloads.sourceforge.net/project/miroom/20.1.16/RedmiNote5_MIUI_20.1.16_MiRoom_9.0.zip?r=https%3A%2F%2Fportal.mi-room.ru%2Froms%2F&ts=1580589042&use_mirror=netcologne')
 			elif call.data == 'screenburn':
 				bot.send_message(call.message.chat.id,'  https://telegra.ph/Solve-screen-burn-in-whyred-08-17' )
 			elif call.data == 'fml':
@@ -141,8 +131,9 @@ def callback_inline(call):
 			elif call.data == 'xtbrn5':
 				bot.send_message(call.message.chat.id,'  https://t.me/RedmiNote5_By_XTB')
 			elif call.data == '4rc':
-				bot.send_message(call.message.chat.id,' https://t.me/redminote5pro ')	
-			
+				bot.send_message(call.message.chat.id,' https://t.me/redminote5pro ')
+			elif call.data == 'MM':	
+				bot.send_message(call.message.chat.id,' https://t.me/magisk_xtb ')
 
 			# remove inline buttons
 			bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Ссылка",
