@@ -1,6 +1,4 @@
-
-# README.md
-
+# My first project 
 ## Overview
 
 This project is a Telegram bot built using the `telebot` library. The bot provides users with various functionalities related to firmware, applications, channels, and chats for the Redmi Note 5 device. It features a user-friendly interface with inline keyboards for easy navigation.
